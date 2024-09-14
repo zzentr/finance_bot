@@ -3,7 +3,6 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
-from re import fullmatch
 
 from core.database import requests as rq
 
