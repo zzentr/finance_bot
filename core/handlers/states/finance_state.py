@@ -35,11 +35,14 @@ async def display_finance(message: Message, state: FSMContext):
         all_income = await to_thread(amount_of_money, income)
         all_expense = await to_thread(amount_of_money, expense)
         categories = await to_thread(top_category, expense)
+        message_categories = ''
+        if len(categories) >= 1:
+            message_categories = 'топ категорий по трате:\n\n'f'{''.join(f'{category} - {amount} руб.\n' 
+                                                                         for category, amount in categories.items())}'
         await message.answer('ваша статистика за данный период:\n\n'
                             f'заработано: {all_income} руб.\n'
                             f'потрачено: {all_expense} руб.\n\n'
-                            'топ категорий по трате:\n\n'
-                            f'{''.join(f'{category} - {amount} руб.\n' for category, amount in categories.items())}')
+                            + message_categories)
         await state.clear()
         return
 

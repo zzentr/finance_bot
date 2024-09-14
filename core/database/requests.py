@@ -5,9 +5,9 @@ from datetime import datetime, timedelta
 from asyncio import to_thread
 
 
-async def new_income(income: dict, tg_id: str, date: datetime):
+async def new_income(income: str, tg_id: str, date: datetime):
     async with async_session() as session:
-        session.add(Income(tg_id=tg_id, amount=income['amount'], date=date.date()))
+        session.add(Income(tg_id=tg_id, amount=int(income), date=date.date()))
         await session.commit()
 
 async def new_expense(expense: dict, tg_id: str, date: datetime):

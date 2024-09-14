@@ -33,7 +33,7 @@ async def amount_income(message: Message, state: FSMContext):
         await message.answer('введите число больше нуля')
         return
     await rq.new_income(amount, message.from_user.id, message.date)
-    await message.answer('спасибо, я сохранил ваши ответы!')
+    await message.answer('спасибо, я сохранил ваш ответ!')
     await state.clear()
 
 
