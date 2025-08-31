@@ -13,8 +13,6 @@ greenlet==3.0.3
 idna==3.7
 magic-filter==1.0.12
 multidict==6.0.5
-numpy==2.0.1
-pandas==2.2.2
 pydantic==2.8.2
 pydantic_core==2.20.1
 pyTelegramBotAPI==4.22.1
